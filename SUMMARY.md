@@ -11,6 +11,6 @@
 * [Ajout des fichiers de base](creation-cle-usb/ajout-des-fichiers-de-base.md)
 * [???](creation-cle-usb/undefined.md)
 
-## Group 1
+## 🛠 Configuration
 
-* [Page 2](group-1/page-2.md)
+* [Page 2](configuration/page-2.md)
