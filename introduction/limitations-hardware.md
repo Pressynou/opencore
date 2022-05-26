@@ -34,7 +34,9 @@ Pour le support du CPU, nous avons la répartition suivante:
 
 **For more in-depth information, see here:** [**Anti-Hardware Buyers Guide**](https://dortania.github.io/Anti-Hackintosh-Buyers-Guide/)
 
-::: details CPU Requirements
+<details>
+
+<summary>CPU Requirements</summary>
 
 Architecture Requirements
 
@@ -79,9 +81,11 @@ Special Notes:
 * OS X 10.6 and older require RebuildAppleMemoryMap enabled
   * This is to resolve an early kernel
 
-:::
 
-::: details Intel CPU Support Chart
+
+</details>
+
+#### &#x20;Intel CPU Support Chart
 
 Support based off of Vanilla Kernels (i.e. no modifications):
 
@@ -106,11 +110,11 @@ Support based off of Vanilla Kernels (i.e. no modifications):
 | [Comet Lake](https://en.wikipedia.org/wiki/Comet\_Lake\_\(microprocessor\))                                                                                                                                                                                         | 10.15.4         | ^^                     | ^^                        | 0x0906E0(S/H)                 |
 | [Ice Lake](https://en.wikipedia.org/wiki/Ice\_Lake\_\(microprocessor\))                                                                                                                                                                                             | ^^              | ^^                     | ^^                        | 0x0706E5(U)                   |
 | [Rocket Lake](https://en.wikipedia.org/wiki/Rocket\_Lake)                                                                                                                                                                                                           | ^^              | ^^                     | Requires Comet Lake CPUID | 0x0A0671                      |
-| [Tiger Lake](https://en.wikipedia.org/wiki/Tiger\_Lake\_\(microprocessor\))                                                                                                                                                                                         | N/A             | N/A                    | Untested                  | 0x0806C0(U)                   |
+| [Tiger Lake](https://en.wikipedia.org/wiki/Tiger\_Lake\_\(microprocessor\))                                                                                                                                                                                         | N/A             | N/A                    | Untested                  | !0x0806C0(U)                  |
 
-:::
+<details>
 
-::: details AMD CPU Limitations in macOS
+<summary>AMD CPU Limitations in macOS</summary>
 
 Unfortunately many features in macOS are outright unsupported with AMD and many others being partially broken. These include:
 
@@ -128,7 +132,7 @@ Unfortunately many features in macOS are outright unsupported with AMD and many 
   * Audio-based apps are the most prone to issues, ie. Logic Pro
   * DaVinci Resolve has been known to have sporadic issues as well
 
-:::
+</details>
 
 ## GPU Support
 
