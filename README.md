@@ -35,4 +35,4 @@ description: Vos premiers pas avec OpenCore
      * Linux (Propre et fonctionelle, avec python 2.7 minimum)
    * Pour les utilisateur de Windows ou Linux, **15GB** d'espace libre sur le disque sur lequel vous travaillez. Sur Windows, votre dique ou est installer l'OS (C:) à besoin d'au moins **15GB** d'espace libre.
    * pour les utilisateurs de MacOS, **30GB** of free space on the system's drive.
-   * la plupart des outils utilisee dans ce guide demande [Python d'installé](https://www.python.org/downloads/)
+   * la plupart des outils utilisée dans ce guide demande [Python d'installé](https://www.python.org/downloads/)
