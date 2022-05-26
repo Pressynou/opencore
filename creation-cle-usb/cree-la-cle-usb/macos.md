@@ -71,13 +71,75 @@ De là, passez à [Configuration du programme d'installation](https://dortania.g
 
 ### Téléchargement de macOS: Legacy OS <a href="#downloading-macos-legacy-os" id="downloading-macos-legacy-os"></a>
 
+Cette méthode vous permet de télécharger des versions beaucoup plus anciennes d'OS X, prenant actuellement en charge toutes les versions Intel d'OS X (10.4 à actuel)
 
+* [Legacy macOS: Offline method](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install-pkg.html)
+  * 10.10-10.12 Supported
+* [Legacy macOS: Online method(10.7-10.15 Supported)](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install-recovery.html)
+  * 10.7-11 Supported
+* [Legacy macOS: Disk Images](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install-dmg.html)
+  * 10.4-10.6 Supported
 
 ### Configuration du programme d'installation
 
 Nous allons maintenant formater la clé USB pour préparer à la fois le programme d'installation macOS et OpenCore. Nous voudrons utiliser macOS Extended (HFS +) avec une carte de partition GUID. Cela créera deux partitions : la principale MyVolume et une seconde appelée EFI qui est utilisée comme partition de démarrage où votre micrologiciel vérifiera les fichiers de démarrage.
 
 * Remarque : Par défaut, Utilitaire de disque n'affiche que les partitions - appuyez sur Cmd/Win+2 pour afficher tous les périphériques (vous pouvez également appuyer sur le bouton Afficher)
-* Remarque 2 : les utilisateurs qui suivent la section "MacOS hérité : méthode en ligne" peuvent passer à la section Configuration de l'environnement EFI d'OpenCore
+* Remarque 2 : les utilisateurs qui suivent la section "MacOS hérité : méthode en ligne" peuvent passer à la section [Configuration de l'environnement EFI d'OpenCore](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html#setting-up-opencore-s-efi-environment)
 
 ![](<../../.gitbook/assets/image (1).png>)
+
+Exécutez ensuite la commande `createinstallmedia` fournie par [Apple](https://support.apple.com/en-us/HT201372) (ouvre une nouvelle fenêtre). Notez que la commande est faite pour les USB formatés avec le nom `MyVolume` :&#x20;
+
+```bash
+sudo /Applications/Install\ macOS\ Big\ Sur.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume
+```
+
+Cela prendra un certain temps, vous voudrez peut-être prendre un café ou continuer à lire le guide (pour être juste, vous ne devriez vraiment pas suivre ce guide étape par étape sans avoir tout lu au préalable).
+
+Vous pouvez également remplacer le chemin `createinstallmedia` par celui de l'emplacement de votre programme d'installation (même idée avec le nom du lecteur).
+
+
+
+<details>
+
+<summary>Commandes <code>createinstallmedia</code> legacy</summary>
+
+Extrait du propre site d'Apple : [comment créer un programme d'installation amorçable pour macOS](https://support.apple.com/en-us/HT201372)
+
+
+
+```bash
+# Monterey
+sudo /Applications/Install\ macOS\ Monterey.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume
+
+# Big Sur
+sudo /Applications/Install\ macOS\ Big\ Sur.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume
+
+# Catalina
+sudo /Applications/Install\ macOS\ Catalina.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume
+
+# Mojave
+sudo /Applications/Install\ macOS\ Mojave.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume
+
+# High Sierra
+sudo /Applications/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume
+
+# Sierra
+sudo /Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume --applicationpath /Applications/Install\ macOS\ Sierra.app
+
+# El Capitan
+sudo /Applications/Install\ OS\ X\ El\ Capitan.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume --applicationpath /Applications/Install\ OS\ X\ El\ Capitan.app
+
+# Yosemite
+sudo /Applications/Install\ OS\ X\ Yosemite.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume --applicationpath /Applications/Install\ OS\ X\ Yosemite.app
+
+# Mavericks
+sudo /Applications/Install\ OS\ X\ Mavericks.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume --applicationpath /Applications/Install\ OS\ X\ Mavericks.app --nointeraction
+```
+
+</details>
+
+### Configuration Legacy
+
+Pour les systèmes ne prenant pas en charge le démarrage UEFI, voir ci-dessous :
