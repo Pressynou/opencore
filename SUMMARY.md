@@ -17,3 +17,7 @@
 ## 🛠 Configuration
 
 * [Page 2](configuration/page-2.md)
+
+***
+
+* [📝 About](about.md)
