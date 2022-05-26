@@ -11,9 +11,7 @@ Pré-requis:
 
 Les installateurs hors ligne ont une copie complète de macOS, tandis que les installateurs en ligne ne sont qu'une image de récupération (\~ 500 Mo) qui télécharge par la suite macOS à partir des serveurs Apple.
 
-*   Hors ligne: Ne peut être créé que sous macOS Windows/Linux n'ont pas les pilotes APFS/HFS nécessaires pour assembler un programme d'installation complet \
-    \
-    **Possible d'installé via l'installateur en ligne, en utilisant le DMG hors ligne** (Tips non officiel)
+*   Hors ligne: Ne peut être créé que sous macOS Windows/Linux n'ont pas les pilotes APFS/HFS nécessaires pour assembler un programme d'installation complet&#x20;
 
 
 * En ligne: Peut être réalisé sous macOS/Linux/Windows Nécessite une connexion Internet fonctionnelle via un adaptateur réseau pris en charge par macOS sur la machine cible
