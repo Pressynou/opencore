@@ -3,7 +3,10 @@
 ## 😎 Introduction
 
 * [Prérequis](README.md)
-* [Copy of Page 3](introduction/copy-of-page-3.md)
+* [Limitations hardware](introduction/limitations-hardware.md)
+* [Trouver votre hardware](introduction/copy-of-page-3.md)
+* [Terminologie](introduction/terminologie.md)
+* [Pourquoi OpenCore plutôt que Clover et d'autres](introduction/openCore-plutot-que-clover.md)
 
 ## 🔑 Création clé USB
 
