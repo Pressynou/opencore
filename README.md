@@ -9,7 +9,7 @@ description: Vos premiers pas avec OpenCore
 
 
 1. _<mark style="color:red;">**\[CRUCIAL]**</mark>_ <mark style="color:red;"></mark><mark style="color:red;"></mark> **Du temps et de la patience.**
-   * Ne commencer pas à travailler si vous avez des délai ou du trvail important. Les hackintosh ne sont pas des machines sur lesquelles vous devez compter.
+   * Ne commencer pas à travailler si vous avez des délais ou du trvail important. Les hackintosh ne sont pas des machines sur lesquelles vous devez compter.
 2. _<mark style="color:red;">**\[CRUCIAL]**</mark>_ **Connaître votre hardware.**
    * Le modèle et la génération de votre processeur (CPU)
    * Votre carte graphique (GPU)
@@ -34,5 +34,5 @@ description: Vos premiers pas avec OpenCore
      * Windows (Windows 10, 1703 minimum)
      * Linux (Propre et fonctionelle, avec python 2.7 minimum)
    * Pour les utilisateur de Windows ou Linux, **15GB** d'espace libre sur le disque sur lequel vous travaillez. Sur Windows, votre dique ou est installer l'OS (C:) à besoin d'au moins **15GB** d'espace libre.
-   * pour les utilisateurs de MacOS, **30GB** of free space on the system's drive.
+   * pour les utilisateurs de MacOS, **30GB** d'espace libre sur votre disque système.
    * la plupart des outils utilisée dans ce guide demande [Python d'installé](https://www.python.org/downloads/)
