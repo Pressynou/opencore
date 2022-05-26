@@ -21,6 +21,10 @@
 
 * [Page 2](configuration/page-2.md)
 
+## 🥳 Installation
+
+* [Processus d'installation](installation/precessus-installation.md)
+
 ***
 
 * [📝 About](about.md)

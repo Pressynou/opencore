@@ -6,7 +6,7 @@ Pour commencer, nous allons nous procurer une copie de macOS. Vous pouvez ignore
 
 ## Téléchargement de macOS: système d'exploitation moderne
 
-* Cette méthode vous permet de télécharger macOS 10.13 et versions ultérieures, pour 10.12 et versions antérieures, voir Téléchargement de macOS : Legacy OS
+* Cette méthode vous permet de télécharger macOS 10.13 et versions ultérieures, pour 10.12 et versions antérieures, voir [Téléchargement de macOS : Legacy OS](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html#downloading-macos-legacy-os)
 
 À partir d'une machine macOS qui répond aux exigences de la version du système d'exploitation que vous souhaitez installer, accédez directement à l'App Store et téléchargez la version du système d'exploitation souhaitée et passez à Configuration du programme d'installation.
 
@@ -155,7 +155,7 @@ Exécutez maintenant l'outil dans le terminal avec sudo (sinon l'outil échouera
 sudo ~/Downloads/OpenCore/Utilities/legacyBoot/BootInstall_X64.tool
 ```
 
-<img src="../../.gitbook/assets/image (2).png" alt="" data-size="original">
+<img src="../../.gitbook/assets/image (2) (2).png" alt="" data-size="original">
 
 Cela vous donnera une liste des disques disponibles, choisissez le votre et vous serez invité à écrire un nouveau MBR. Choisissez oui `[y]` et vous aurez terminé.
 
@@ -169,10 +169,10 @@ Cela vous fournira une partition EFI avec un fichier **bootia32** ou bootx64
 
 La configuration de l'environnement EFI d'OpenCore est simple - tout ce que vous avez à faire est de monter notre partition système EFI. Cela se fait automatiquement lorsque nous formatons avec GUID mais est démonté par défaut, c'est là que notre ami [MountEFI](https://github.com/corpnewt/MountEFI) entre en jeu :
 
-![](<../../.gitbook/assets/image (3).png>)
+![](<../../.gitbook/assets/image (3) (2).png>)
 
 Vous remarquerez qu'une fois que nous avons ouvert la partition EFI, elle est vide. C'est là que le plaisir commence.
 
-![](../../.gitbook/assets/image.png)
+![](<../../.gitbook/assets/image (2).png>)
 
 Maintenant que tout cela est fait, vous pouvez continuer le tuto: [Configuration de l'EFI](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/opencore-efi.html)
