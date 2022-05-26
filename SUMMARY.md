@@ -2,7 +2,7 @@
 
 ## 😎 Introduction
 
-* [Prérequis](README.md)
+* [Pré-requis](README.md)
 * [Limitations hardware](introduction/limitations-hardware.md)
 * [Trouver votre hardware](introduction/copy-of-page-3.md)
 * [Terminologie](introduction/terminologie.md)
