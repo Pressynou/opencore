@@ -9,7 +9,7 @@ description: Vos premiers pas avec OpenCore
 
 
 1. _<mark style="color:red;">**\[CRUCIAL]**</mark>_ <mark style="color:red;"></mark><mark style="color:red;"></mark> **Du temps et de la patience.**
-   * Ne commencer pas à travailler si vous avais des délai ou du trvail important. Les hackintosh ne sont pas des machines sur lesquelles vous devez compter.
+   * Ne commencer pas à travailler si vous avez des délai ou du trvail important. Les hackintosh ne sont pas des machines sur lesquelles vous devez compter.
 2. _<mark style="color:red;">**\[CRUCIAL]**</mark>_ **Connaître votre hardware.**
    * Le modèle et la génération de votre processeur (CPU)
    * Votre carte graphique (GPU)
