@@ -8,31 +8,31 @@ description: Vos premiers pas avec OpenCore
 
 
 
-1. _<mark style="color:red;">**\[CRUCIAL]**</mark>_ <mark style="color:red;"></mark><mark style="color:red;"></mark> **Temps et de la patience.**
-   * Don't start working on this if you have deadlines or important work. Hackintoshes are not something you should be relying on as a work machine.
+1. _<mark style="color:red;">**\[CRUCIAL]**</mark>_ <mark style="color:red;"></mark><mark style="color:red;"></mark> **Du temps et de la patience.**
+   * Ne commencer pas à travailler si vous avais des délai ou du trvail important. Les hackintosh ne sont pas des machines sur lesquelles vous devez compter.
 2. _<mark style="color:red;">**\[CRUCIAL]**</mark>_ **Connaître votre hardware.**
-   * Your CPU name and its generation
-   * Your GPUs
-   * Your storage devices (HDD/SSD, NVMe/AHCI/RAID/IDE configuration)
-   * Your laptop/desktop model if from an OEM
-   * Your **Ethernet chipset**
-   * Your WLAN/Bluetooth chipset
-3. _<mark style="color:red;">**\[CRUCIAL]**</mark>_ **A BASIC KNOWLEDGE OF COMMAND LINES AND HOW TO USE A TERMINAL/COMMAND PROMPT**
-   * This is not just \[CRUCIAL], this is the basis of this whole guide. We can't help you if you don't know how to `cd` to a directory or delete a file.
-4. _<mark style="color:red;">**\[CRUCIAL]**</mark>_ <mark style="color:red;"></mark><mark style="color:red;"></mark> A machine that is compatible as seen in the _**Compatibility**_ section.
-   * [Hardware Limitations page](https://dortania.github.io/OpenCore-Install-Guide/macos-limits.html)
-5. _<mark style="color:red;">**\[CRUCIAL]**</mark>_ A minimum of:
-   * 16GB USB if you're going to use macOS to create the USB
-   * 4GB USB if you're going to use Windows or Linux for USB creation
-6. _<mark style="color:red;">**\[CRUCIAL]**</mark>_ <mark style="color:red;"></mark><mark style="color:red;"></mark> An **Ethernet connection** (no WiFi dongles, Ethernet USB adapter may work depending on macOS support) and you must know your LAN card's model
-   * You must either have a physical Ethernet port, or a compatible macOS Ethernet dongle/adapter. In case you have a [compatible WiFi card (opens new window)](https://dortania.github.io/Wireless-Buyers-Guide/), you can also use that.
-     * Note the majority of WiFi cards are not supported by macOS
-   * For people who can't use ethernet but have an Android phone, you can connect your Android phone to WiFi and then tether it using USB with [HoRNDIS (opens new window)](https://joshuawise.com/horndis#available\_versions).
-7. _<mark style="color:red;">**\[CRUCIAL]**</mark>_ **Proper OS Installation:**
+   * Le modèle et la génération de votre processeur (CPU)
+   * Votre carte graphique (GPU)
+   * Votre matériel de stockage (HDD/SSD,configuration NVMe/AHCI/RAID/IDE)
+   * Le modèle de votre pc portable ou pc de bureau si celui-ci est un OEM
+   * Votre **chipset internet**
+   * Votre carte Wifi/Bluetooth
+3. _<mark style="color:red;">**\[CRUCIAL]**</mark>_ **LA CONNAISSANCE DES BASES DES LIGNES DE COMMANDES POUR UTILISER LE TERMINAL**
+   * ce n'est pas juste \[CRUCIAL], c'est la base de tout le guide. nous ne pouvons pas vous aidez si vous ne  savez pas `cd` vers un répertoire ou supprimer des fichiers.
+4. _<mark style="color:red;">**\[CRUCIAL]**</mark>_ <mark style="color:red;"></mark><mark style="color:red;"></mark> une machine compatible comme dans la section _**Compatibilité**_.
+   * [Page des limites hardware](https://dortania.github.io/OpenCore-Install-Guide/macos-limits.html)
+5. _<mark style="color:red;">**\[CRUCIAL]**</mark>_ Au minimum:
+   * une clé de 16gb si vous comptez utiliser MacOS pour creer la clé.
+   * une clé de 4gb si vous comptez utiliser Windows/Linux pour créer la clé.
+6. _<mark style="color:red;">**\[CRUCIAL]**</mark>_ <mark style="color:red;"></mark><mark style="color:red;"></mark> Une **connexion internet** (pas de dongles Wifi, un adaptateur USB vers ethernet peut fonctionner suivant la prise en charge de MacOS) et vous devez savoir la modèle de votre carte ethernet
+   * Vous devez disposer d'un port Ethernet physique ou d'un adaptateur/dongle Ethernet compatible avec macOS.. si vous avez [une carte Wifi compatible (ouvre une nouvelle fenêtres)](https://dortania.github.io/Wireless-Buyers-Guide/), vous pouvez aussi l'utiliser.
+     * Notez que la majorité des cartes Wifi ne sont pas supporté par MacOS
+   * Pour les personnes ne disposant pas de carte Wifi ou de port ethernet fonctionnel mais que vous avez un téléphone Android, vous pouvez connecter votre téléphone Android au Wifi et faire un partage de connexion en USB aveec [HoRNDIS (ouvre une nouvelle fenêtre)](https://joshuawise.com/horndis#available\_versions).
+7. _<mark style="color:red;">**\[CRUCIAL]**</mark>_ **Installation correcte de votre OS:**
    * Be it:
-     * macOS (a fairly recent one would be better)
-     * Windows (Windows 10, 1703 or newer)
-     * Linux (Clean and properly functioning, with Python 2.7 or later)
-   * For Windows or Linux users, **15GB** of free space on the drive you're working on. On Windows, your OS disk (C:) must have at least **15GB** of free space.
-   * For macOS users, **30GB** of free space on the system's drive.
-   * Most tools used in this guide will also require [Python installed](https://www.python.org/downloads/)
+     * macOS (Un modèle récent serait mieux)
+     * Windows (Windows 10, 1703 minimum)
+     * Linux (Propre et fonctionelle, avec python 2.7 minimum)
+   * Pour les utilisateur de Windows ou Linux, **15GB** d'espace libre sur le disque sur lequel vous travaillez. Sur Windows, votre dique ou est installer l'OS (C:) à besoin d'au moins **15GB** d'espace libre.
+   * pour les utilisateurs de MacOS, **30GB** of free space on the system's drive.
+   * la plupart des outils utilisee dans ce guide demande [Python d'installé](https://www.python.org/downloads/)
