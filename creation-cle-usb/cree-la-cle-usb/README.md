@@ -16,7 +16,7 @@ Les installateurs hors ligne ont une copie complète de macOS, tandis que les in
 
 * En ligne: Peut être réalisé sous macOS/Linux/Windows Nécessite une connexion Internet fonctionnelle via un adaptateur réseau pris en charge par macOS sur la machine cible
 
-#### Making the Installer
+#### Création du programme d'installation
 
 Selon le système d'exploitation sur lequel vous possédé, consultez votre section spécifique sur la création de l'USB :
 
