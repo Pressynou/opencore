@@ -6,7 +6,7 @@ Pour commencer, nous allons nous procurer une copie de macOS. Vous pouvez ignore
 
 ## Téléchargement de macOS: système d'exploitation moderne
 
-* Cette méthode vous permet de télécharger macOS 10.13 et versions ultérieures, pour 10.12 et versions antérieures, voir [Téléchargement de macOS : Legacy OS](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html#downloading-macos-legacy-os)
+* Cette méthode vous permet de télécharger macOS 10.13 et versions ultérieures, pour 10.12 et versions antérieures, voir Téléchargement de macOS : Legacy OS
 
 À partir d'une machine macOS qui répond aux exigences de la version du système d'exploitation que vous souhaitez installer, accédez directement à l'App Store et téléchargez la version du système d'exploitation souhaitée et passez à Configuration du programme d'installation.
 
