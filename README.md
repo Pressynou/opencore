@@ -27,7 +27,7 @@ description: Vos premiers pas avec OpenCore
 6. _<mark style="color:red;">**\[CRUCIAL]**</mark>_ <mark style="color:red;"></mark><mark style="color:red;"></mark> Une **connexion internet** (pas de dongles Wifi, un adaptateur USB vers ethernet peut fonctionner suivant la prise en charge de MacOS) et vous devez savoir la modèle de votre carte ethernet
    * Vous devez disposer d'un port Ethernet physique ou d'un adaptateur/dongle Ethernet compatible avec macOS.. si vous avez [une carte Wifi compatible (ouvre une nouvelle fenêtre)](https://dortania.github.io/Wireless-Buyers-Guide/), vous pouvez aussi l'utiliser.
      * Notez que la majorité des cartes Wifi ne sont pas supporté par MacOS
-   * Pour les personnes ne disposant pas de carte Wifi ou de port ethernet fonctionnel mais que vous avez un téléphone Android, vous pouvez connecter votre téléphone Android au Wifi et faire un partage de connexion en USB aveec [HoRNDIS (ouvre une nouvelle fenêtre)](https://joshuawise.com/horndis#available\_versions).
+   * Pour les personnes ne disposant pas de carte Wifi ou de port ethernet fonctionnel mais que vous avez un téléphone Android, vous pouvez connecter votre téléphone Android au Wifi et faire un partage de connexion en USB avec [HoRNDIS (ouvre une nouvelle fenêtre)](https://joshuawise.com/horndis#available\_versions).
 7. _<mark style="color:red;">**\[CRUCIAL]**</mark>_ **Installation correcte de votre OS:**
    * Be it:
      * macOS (Un modèle récent serait mieux)
