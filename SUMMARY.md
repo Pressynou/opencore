@@ -2,8 +2,15 @@
 
 * [Page 1](README.md)
 
-## 🔑 Création de la clé USB
+## 🔑 Création clé USB
 
-* [Page 2](creation-de-la-cle-usb/page-2.md)
+* [Crée la clé usb](creation-cle-usb/cree-la-cle-usb/README.md)
+  * [MacOS](creation-cle-usb/cree-la-cle-usb/macos.md)
+  * [Windows](creation-cle-usb/cree-la-cle-usb/windows.md)
+  * [Linux](creation-cle-usb/cree-la-cle-usb/linux.md)
+* [Ajout des fichiers de base](creation-cle-usb/ajout-des-fichiers-de-base.md)
+* [???](creation-cle-usb/undefined.md)
 
 ## Group 1
+
+* [Page 2](group-1/page-2.md)
