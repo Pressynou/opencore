@@ -1,6 +1,9 @@
 # Table of contents
 
-* [Page 1](README.md)
+## 😎 Introduction
+
+* [Prérequis](README.md)
+* [Copy of Page 3](introduction/copy-of-page-3.md)
 
 ## 🔑 Création clé USB
 
