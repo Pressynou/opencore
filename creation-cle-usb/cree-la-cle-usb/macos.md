@@ -42,11 +42,11 @@ Pour l'exécuter, copiez et collez simplement la commande ci-dessous dans une fe
 mkdir -p ~/macOS-installer && cd ~/macOS-installer && curl https://raw.githubusercontent.com/munki/macadmin-scripts/main/installinstallmacos.py > installinstallmacos.py && sudo python installinstallmacos.py
 ```
 
-![](../../.gitbook/assets/image.png)
+![](<../../.gitbook/assets/image (1).png>)
 
 Comme vous pouvez le voir, nous obtenons une belle liste d'installateurs macOS. Si vous avez besoin d'une version particulière de macOS, vous pouvez la sélectionner en tapant le numéro à côté. Pour cet exemple, nous choisirons 10 :&#x20;
 
-![](<../../.gitbook/assets/image (3).png>)
+![](<../../.gitbook/assets/image (3) (1).png>)
 
 
 
@@ -63,9 +63,9 @@ Une fois terminé, vous trouverez dans votre dossier `~/macOS-Installer/` un DMG
 * Remarque : Nous vous recommandons de déplacer l'application Install macOS.app dans le dossier `/Applications`, car nous exécuterons des commandes à partir de là.
 * Remarque 2 : L'exécution de Cmd+Shift+G dans le Finder vous permettra d'accéder facilement à `~/macOS-installer`
 
-![](<../../.gitbook/assets/image (2).png>)
+![](<../../.gitbook/assets/image (2) (1).png>)
 
-![](<../../.gitbook/assets/image (4).png>)
+![](<../../.gitbook/assets/image (4) (1).png>)
 
 De là, passez à [Configuration du programme d'installation](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html#setting-up-the-installer) pour terminer votre travail. Si vous souhaitez vérifier [l'intégrité de votre téléchargement](https://github.com/notpeter/apple-installer-checksums), vous pouvez consulter ce référentiel de sommes de contrôle (ouvre une nouvelle fenêtre), mais notez qu'il s'agit de sommes de contrôle participatives et qu'elles ne constituent peut-être pas un moyen fiable de vérifier l'authenticité.
 
@@ -87,7 +87,7 @@ Nous allons maintenant formater la clé USB pour préparer à la fois le program
 * Remarque : Par défaut, Utilitaire de disque n'affiche que les partitions - appuyez sur Cmd/Win+2 pour afficher tous les périphériques (vous pouvez également appuyer sur le bouton Afficher)
 * Remarque 2 : les utilisateurs qui suivent la section "MacOS hérité : méthode en ligne" peuvent passer à la section [Configuration de l'environnement EFI d'OpenCore](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/mac-install.html#setting-up-opencore-s-efi-environment)
 
-![](<../../.gitbook/assets/image (1).png>)
+![](<../../.gitbook/assets/image (1) (1).png>)
 
 Exécutez ensuite la commande `createinstallmedia` fournie par [Apple](https://support.apple.com/en-us/HT201372) (ouvre une nouvelle fenêtre). Notez que la commande est faite pour les USB formatés avec le nom `MyVolume` :&#x20;
 
@@ -142,4 +142,47 @@ sudo /Applications/Install\ OS\ X\ Mavericks.app/Contents/Resources/createinstal
 
 ### Configuration Legacy
 
-Pour les systèmes ne prenant pas en charge le démarrage UEFI, voir ci-dessous :
+Pour les systèmes ne prenant pas en charge le démarrage UEFI, voir ci-dessous :&#x20;
+
+<details>
+
+<summary>Configuration du démarrage legacy</summary>
+
+Pour commencer, vous avez besoin des éléments suivants :&#x20;
+
+* BootInstall\_IA32.tool ou BootInstall\_X64.tool
+  * Cela peut être trouvé dans OpenCorePkg sous`/Utilties/LegacyBoot/`
+* L'USB d'installation (Créé en haut)
+
+Dans votre dossier de construction OpenCore, accédez à `Utilities/LegacyBoot`. Vous trouverez ici un fichier appelé `BootInstall_ARCH.tool`. Il permet d'installer DuetPkg sur le lecteur souhaité.
+
+<img src="../../.gitbook/assets/image (4).png" alt="" data-size="original">
+
+Exécutez maintenant l'outil dans le terminal avec sudo (sinon l'outil échouera probablement):
+
+```bash
+# Remplacez X64 par IA32 si vous avez un processeur 32 bits
+sudo ~/Downloads/OpenCore/Utilities/legacyBoot/BootInstall_X64.tool
+```
+
+![](<../../.gitbook/assets/image (2).png>)
+
+Cela vous donnera une liste des disques disponibles, choisissez le votre et vous serez invité à écrire un nouveau MBR. Choisissez oui `[y]` et vous aurez terminé.
+
+<img src="../../.gitbook/assets/image (6).png" alt="" data-size="original">![](<../../.gitbook/assets/image (10).png>)
+
+Cela vous fournira une partition EFI avec un fichier **bootia32** ou bootx64
+
+</details>
+
+### Configuration de l'environnement EFI d'OpenCore
+
+La configuration de l'environnement EFI d'OpenCore est simple - tout ce que vous avez à faire est de monter notre partition système EFI. Cela se fait automatiquement lorsque nous formatons avec GUID mais est démonté par défaut, c'est là que notre ami [MountEFI](https://github.com/corpnewt/MountEFI) entre en jeu :&#x20;
+
+![](<../../.gitbook/assets/image (3).png>)
+
+Vous remarquerez qu'une fois que nous avons ouvert la partition EFI, elle est vide. C'est là que le plaisir commence.
+
+![](../../.gitbook/assets/image.png)
+
+Maintenant que tout cela est fait, vous pouvez continuer le tuto: [Configuration de l'EFI](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/opencore-efi.html)
