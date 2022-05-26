@@ -29,7 +29,7 @@ description: Vos premiers pas avec OpenCore
      * Notez que la majorité des cartes Wifi ne sont pas supporté par MacOS
    * Pour les personnes ne disposant pas de carte Wifi ou de port ethernet fonctionnel mais que vous avez un téléphone Android, vous pouvez connecter votre téléphone Android au Wifi et faire un partage de connexion en USB avec [HoRNDIS (ouvre une nouvelle fenêtre)](https://joshuawise.com/horndis#available\_versions).
 7. _<mark style="color:red;">**\[CRUCIAL]**</mark>_ **Installation correcte de votre OS:**
-   * Be it:
+   * Soit:
      * macOS (Un modèle récent serait mieux)
      * Windows (Windows 10, 1703 minimum)
      * Linux (Propre et fonctionelle, avec python 2.7 minimum)
