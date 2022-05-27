@@ -32,85 +32,85 @@ Pour le support du CPU, nous avons la répartition suivante:
   * Les CPU de pc portables **ne sont pas** supportés
   * Notez que toutes les fonctionnalité de MacOS ne sont pas supporté avec les processeur AMD, voir ci-dessous
 
-**For more in-depth information, see here:** [**Anti-Hardware Buyers Guide**](https://dortania.github.io/Anti-Hackintosh-Buyers-Guide/)
+**Pour plus d'information en profondeur, soir ici:**  [**Guide d'achat anti-hardware**](https://dortania.github.io/Anti-Hackintosh-Buyers-Guide/)****
 
 <details>
 
-<summary>CPU Requirements</summary>
+<summary>Les exigences CPU</summary>
 
-Architecture Requirements
+exigences de l'architecture&#x20;
 
-* 32-bit CPUs are supported from 10.4.1 to 10.6.8
-  * Note that 10.7.x requires 64-bit userspace, limiting 32-bit CPUs to 10.6
-* 64-bit CPUs are supported from 10.4.1 to current
+* les CPU 32-bit sont supporté de MacOS 10.4.1 à 10.6.8
+  * Notez que les versions 10.7.x demandent un userspace en 64-bit, limitant donc les cpu 32-bit à 10.6.
+* les CPU 64-bit sont supporté des versions 10.4.1 au versions actuelle.
 
-SSE Requirements:
+Exigences SSE:
 
-* SSE3 is required for all Intel versions of OS X/macOS
-* SSSE3 is required for all 64-bit versions of OS X/macOS
-  * For CPUs missing SSSE3 (i.e. certain 64-bit Pentiums), we recommend running 32-bit userspace (`i386-user32`)
-* SSE4 is required for macOS 10.12 and newer
-* SSE4.2 is required for macOS 10.14 and newer
-  * SSE4.1 CPUs are supported with [telemetrap.kext](https://forums.macrumors.com/threads/mp3-1-others-sse-4-2-emulation-to-enable-amd-metal-driver.2206682/post-28447707)
-  * Newer AMD drivers also require SSE4.2 for Metal support. To resolve this, see here: [MouSSE: SSE4.2 emulation](https://forums.macrumors.com/threads/mp3-1-others-sse-4-2-emulation-to-enable-amd-metal-driver.2206682/)
+* SSE3 est demandé pour toutes les versions Intel de OS X/macOS
+* SSSE3 pour toutes les versions 64-bit de OS X/macOS
+  * pour les CPUs n'ayant pas SSSE3 (i.e. certain Pentiums 64-bit), nous recommandons de tourner sur un userspace en 32-bit (`i386-user32`)
+* SSE4 est demander pour les versions de macOS 10.12 et plus récentes
+* SSE4.2 est demandé pour les versions de macOS 10.14 and plus récentes
+  * Les CPUs ayant SSE4.1 sont supportés avec [telemetrap.kext](https://forums.macrumors.com/threads/mp3-1-others-sse-4-2-emulation-to-enable-amd-metal-driver.2206682/post-28447707)
+  * Les pilotes AMD récent demandent aussi SSE4.2 pour le support de Metal. Pour résoudre cela, voir ici: [MouSSE: SSE4.2 emulation](https://forums.macrumors.com/threads/mp3-1-others-sse-4-2-emulation-to-enable-amd-metal-driver.2206682/)
 
-Firmware Requirements:
+Exigences firmware:
 
-* OS X 10.4.1 through 10.4.7 require EFI32 (i.e. IA32 (32-bit) version of OpenCore)
-  * OS X 10.4.8 through 10.7.5 support both EFI32 and EFI64
-* OS X 10.8 and newer require EFI64 (i.e. x64 (64-bit) version of OpenCore)
-* OS X 10.7 through 10.9 require OpenPartitionDxe.efi to boot the Recovery partition
+* De OS X 10.4.1 à 10.4.7, il faut un EFI32 (i.e. La version IA32 (32-bit) d'OpenCore).
+  * De OS X 10.4.8 à 10.7.5, supports entre l'EFI32 et l'EFI64.
+* De OS X 10.8 aux plus récentes EFI64 (i.e. la version x64 (64-bit) d'OpenCore).
+* De OS X 10.7 à 10.9, ces versions demandent OpenPartitionDxe.efi pour démarrer sur la partition du recovery.
 
-Kernel Requirements:
+Exigences du Kernel:
 
-* OS X 10.4 and 10.5 require 32-bit kexts due to only supporting 32-bit kernelspace
-  * OS X 10.6 and 10.7 support both 32 and 64-bit kernelspace
-* OS X 10.8 and newer require 64-bit kexts due to only supporting 64-bit kernelspace
-  * Run `lipo -archs` to know what architectures your kext supports (remember to run this on the binary itself and not the .kext bundle)
+* Les versions OS X 10.4 à 10.5 demandent des kexts 32-bit à cause du unique du kernelspace 32-bit.
+  * Les versions OS X 10.6 à 10.7 supportent les kernelspace 32 et 64-bit.
+* Les versions OS X 10.8 et récentes demandent des kexts 64-bit à cause du support unique du kernelspace en 64bit.
+  * Lancez `lipo -archs` quelles architecture votre kext supporte (N'oubliez pas d'exécuter cette opération sur le binaire lui-même et non sur le paquet .kext.)
 
-Core/Thread Count Limits:
+Limites du nombre de cœurs/threads:
 
-* OS X 10.10 and below may not boot with more than 24 threads (evident by a `mp_cpus_call_wait() timeout` panic)
-* OS X 10.11 and newer have a 64 thread limit
-* `cpus=` boot argument can be used as a workaround, or disabling hyperthreading
+* Les versions OS X 10.10 et inférieur ne peuvent pas démarrer avec plus de 24 threads (évident par une panique `mp_cpus_call_wait() timeout`)
+* Les versions OS X 10.11 et récentes ont une limite de 64 threads
+* l'argument de démarrage `cpus=` peut être utilisé comme solution de contournement, ou en désactivant l'hyperthreading
 
-Special Notes:
+Notes spéciales:
 
-* Lilu and plugins require 10.8 or newer to operate
-  * We recommend running FakeSMC for older versions of OS X
-* OS X 10.6 and older require RebuildAppleMemoryMap enabled
-  * This is to resolve an early kernel
+* Lilu et les autres plugins demandent la version 10.8 ou plus récentes pour fonctionner
+  * Nous recommandons de lancer FakeSMC pour les anciennes versions d'OS X
+* Les versions OS X 10.6 et plus vielles demandent RebuildAppleMemoryMap d'activer
+  * Il s'agit de résoudre un kernet précoce
 
 
 
 </details>
 
-#### &#x20;Intel CPU Support Chart
+#### &#x20;Tableau de support des processeurs Intel
 
-Support based off of Vanilla Kernels (i.e. no modifications):
+Support basé sur les Kernels Vanilla (i.e. aucune modification):
 
-| CPU Generation                                                                                                                                                                                                                                                      | Initial support | Last supported version | Notes                     | CPUID                         |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- | ---------------------- | ------------------------- | ----------------------------- |
-| [Pentium 4](https://en.wikipedia.org/wiki/Pentium\_4)                                                                                                                                                                                                               | 10.4.1          | 10.5.8                 | Only used in dev kits     | 0x0F41                        |
-| [Yonah](https://en.wikipedia.org/wiki/Yonah\_\(microprocessor\))                                                                                                                                                                                                    | 10.4.4          | 10.6.8                 | 32-Bit                    | 0x0006E6                      |
-| [Conroe](https://en.wikipedia.org/wiki/Conroe\_\(microprocessor\)), [Merom](https://en.wikipedia.org/wiki/Merom\_\(microprocessor\))                                                                                                                                | 10.4.7          | 10.11.6                | No SSE4                   | 0x0006F2                      |
-| [Penryn](https://en.wikipedia.org/wiki/Penryn\_\(microarchitecture\))                                                                                                                                                                                               | 10.4.10         | 10.13.6                | No SSE4.2                 | 0x010676                      |
-| [Nehalem](https://en.wikipedia.org/wiki/Nehalem\_\(microarchitecture\))                                                                                                                                                                                             | 10.5.6          | Current                | N/A                       | 0x0106A2                      |
-| [Lynnfield](https://en.wikipedia.org/wiki/Lynnfield\_\(microprocessor\)), [Clarksfield](https://en.wikipedia.org/wiki/Clarksfield\_\(microprocessor\))                                                                                                              | 10.6.3          | ^^                     | No iGPU support 10.14+    | 0x0106E0                      |
-| [Westmere, Clarkdale, Arrandale](https://en.wikipedia.org/wiki/Westmere\_\(microarchitecture\))                                                                                                                                                                     | 10.6.4          | ^^                     | ^^                        | 0x0206C0                      |
-| [Sandy Bridge](https://en.wikipedia.org/wiki/Sandy\_Bridge)                                                                                                                                                                                                         | 10.6.7          | ^^                     | ^^                        | 0x0206A0(M/H)                 |
-| [Ivy Bridge](https://en.wikipedia.org/wiki/Ivy\_Bridge\_\(microarchitecture\))                                                                                                                                                                                      | 10.7.3          | ^^                     | No iGPU support 12+       | 0x0306A0(M/H/G)               |
-| [Ivy Bridge-E5](https://en.wikipedia.org/wiki/Ivy\_Bridge\_\(microarchitecture\))                                                                                                                                                                                   | 10.9.2          | ^^                     | N/A                       | 0x0306E0                      |
-| [Haswell](https://en.wikipedia.org/wiki/Haswell\_\(microarchitecture\))                                                                                                                                                                                             | 10.8.5          | ^^                     | ^^                        | 0x0306C0(S)                   |
-| [Broadwell](https://en.wikipedia.org/wiki/Broadwell\_\(microarchitecture\))                                                                                                                                                                                         | 10.10.0         | ^^                     | ^^                        | 0x0306D4(U/Y)                 |
-| [Skylake](https://en.wikipedia.org/wiki/Skylake\_\(microarchitecture\))                                                                                                                                                                                             | 10.11.0         | ^^                     | ^^                        | 0x0506e3(H/S) 0x0406E3(U/Y)   |
-| [Kaby Lake](https://en.wikipedia.org/wiki/Kaby\_Lake)                                                                                                                                                                                                               | 10.12.4         | ^^                     | ^^                        | 0x0906E9(H/S/G) 0x0806E9(U/Y) |
-| [Coffee Lake](https://en.wikipedia.org/wiki/Coffee\_Lake)                                                                                                                                                                                                           | 10.12.6         | ^^                     | ^^                        | 0x0906EA(S/H/E) 0x0806EA(U)   |
-| [Amber](https://en.wikipedia.org/wiki/Kaby\_Lake#List\_of\_8th\_generation\_Amber\_Lake\_Y\_processors), [Whiskey](https://en.wikipedia.org/wiki/Whiskey\_Lake\_\(microarchitecture\)), [Comet Lake](https://en.wikipedia.org/wiki/Comet\_Lake\_\(microprocessor\)) | 10.14.1         | ^^                     | ^^                        | 0x0806E0(U/Y)                 |
-| [Comet Lake](https://en.wikipedia.org/wiki/Comet\_Lake\_\(microprocessor\))                                                                                                                                                                                         | 10.15.4         | ^^                     | ^^                        | 0x0906E0(S/H)                 |
-| [Ice Lake](https://en.wikipedia.org/wiki/Ice\_Lake\_\(microprocessor\))                                                                                                                                                                                             | ^^              | ^^                     | ^^                        | 0x0706E5(U)                   |
-| [Rocket Lake](https://en.wikipedia.org/wiki/Rocket\_Lake)                                                                                                                                                                                                           | ^^              | ^^                     | Requires Comet Lake CPUID | 0x0A0671                      |
-| [Tiger Lake](https://en.wikipedia.org/wiki/Tiger\_Lake\_\(microprocessor\))                                                                                                                                                                                         | N/A             | N/A                    | Untested                  | !0x0806C0(U)                  |
+| Génération du CPU                                                                                                                                                                                                                                                   | Support initial | Dernière version supporté | Notes                                              | CPUID                         |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- | ------------------------- | -------------------------------------------------- | ----------------------------- |
+| [Pentium 4](https://en.wikipedia.org/wiki/Pentium\_4)                                                                                                                                                                                                               | 10.4.1          | 10.5.8                    | Seulement utilisés dans les kits de développements | 0x0F41                        |
+| [Yonah](https://en.wikipedia.org/wiki/Yonah\_\(microprocessor\))                                                                                                                                                                                                    | 10.4.4          | 10.6.8                    | 32-Bit                                             | 0x0006E6                      |
+| [Conroe](https://en.wikipedia.org/wiki/Conroe\_\(microprocessor\)), [Merom](https://en.wikipedia.org/wiki/Merom\_\(microprocessor\))                                                                                                                                | 10.4.7          | 10.11.6                   | Pas d'SSE4                                         | 0x0006F2                      |
+| [Penryn](https://en.wikipedia.org/wiki/Penryn\_\(microarchitecture\))                                                                                                                                                                                               | 10.4.10         | 10.13.6                   | Pas d'SSE4.2                                       | 0x010676                      |
+| [Nehalem](https://en.wikipedia.org/wiki/Nehalem\_\(microarchitecture\))                                                                                                                                                                                             | 10.5.6          | Current                   | N/A                                                | 0x0106A2                      |
+| [Lynnfield](https://en.wikipedia.org/wiki/Lynnfield\_\(microprocessor\)), [Clarksfield](https://en.wikipedia.org/wiki/Clarksfield\_\(microprocessor\))                                                                                                              | 10.6.3          | ^^                        | Pas de support iGPU pour les versions 10.14+       | 0x0106E0                      |
+| [Westmere, Clarkdale, Arrandale](https://en.wikipedia.org/wiki/Westmere\_\(microarchitecture\))                                                                                                                                                                     | 10.6.4          | ^^                        | ^^                                                 | 0x0206C0                      |
+| [Sandy Bridge](https://en.wikipedia.org/wiki/Sandy\_Bridge)                                                                                                                                                                                                         | 10.6.7          | ^^                        | ^^                                                 | 0x0206A0(M/H)                 |
+| [Ivy Bridge](https://en.wikipedia.org/wiki/Ivy\_Bridge\_\(microarchitecture\))                                                                                                                                                                                      | 10.7.3          | ^^                        | Pas de support iGPU pour les versions 12+          | 0x0306A0(M/H/G)               |
+| [Ivy Bridge-E5](https://en.wikipedia.org/wiki/Ivy\_Bridge\_\(microarchitecture\))                                                                                                                                                                                   | 10.9.2          | ^^                        | N/A                                                | 0x0306E0                      |
+| [Haswell](https://en.wikipedia.org/wiki/Haswell\_\(microarchitecture\))                                                                                                                                                                                             | 10.8.5          | ^^                        | ^^                                                 | 0x0306C0(S)                   |
+| [Broadwell](https://en.wikipedia.org/wiki/Broadwell\_\(microarchitecture\))                                                                                                                                                                                         | 10.10.0         | ^^                        | ^^                                                 | 0x0306D4(U/Y)                 |
+| [Skylake](https://en.wikipedia.org/wiki/Skylake\_\(microarchitecture\))                                                                                                                                                                                             | 10.11.0         | ^^                        | ^^                                                 | 0x0506e3(H/S) 0x0406E3(U/Y)   |
+| [Kaby Lake](https://en.wikipedia.org/wiki/Kaby\_Lake)                                                                                                                                                                                                               | 10.12.4         | ^^                        | ^^                                                 | 0x0906E9(H/S/G) 0x0806E9(U/Y) |
+| [Coffee Lake](https://en.wikipedia.org/wiki/Coffee\_Lake)                                                                                                                                                                                                           | 10.12.6         | ^^                        | ^^                                                 | 0x0906EA(S/H/E) 0x0806EA(U)   |
+| [Amber](https://en.wikipedia.org/wiki/Kaby\_Lake#List\_of\_8th\_generation\_Amber\_Lake\_Y\_processors), [Whiskey](https://en.wikipedia.org/wiki/Whiskey\_Lake\_\(microarchitecture\)), [Comet Lake](https://en.wikipedia.org/wiki/Comet\_Lake\_\(microprocessor\)) | 10.14.1         | ^^                        | ^^                                                 | 0x0806E0(U/Y)                 |
+| [Comet Lake](https://en.wikipedia.org/wiki/Comet\_Lake\_\(microprocessor\))                                                                                                                                                                                         | 10.15.4         | ^^                        | ^^                                                 | 0x0906E0(S/H)                 |
+| [Ice Lake](https://en.wikipedia.org/wiki/Ice\_Lake\_\(microprocessor\))                                                                                                                                                                                             | ^^              | ^^                        | ^^                                                 | 0x0706E5(U)                   |
+| [Rocket Lake](https://en.wikipedia.org/wiki/Rocket\_Lake)                                                                                                                                                                                                           | ^^              | ^^                        | deamnde un CPUID Comet Lake                        | 0x0A0671                      |
+| [Tiger Lake](https://en.wikipedia.org/wiki/Tiger\_Lake\_\(microprocessor\))                                                                                                                                                                                         | N/A             | N/A                       | Non-testés                                         | !0x0806C0(U)                  |
 
 <details>
 
